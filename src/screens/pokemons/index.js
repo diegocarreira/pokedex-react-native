@@ -7,7 +7,6 @@ import api from '../../services/api';
 import Spinner from 'react-native-loading-spinner-overlay';
 import {flashError} from '../../services/utils';
 import {useNavigation} from '@react-navigation/native';
-import {Button} from '../../components/Button';
 
 const Pokemons = () => {
   const navigation = useNavigation();
@@ -82,7 +81,6 @@ const Pokemons = () => {
       let page = next.split('?');
       getPokemons(null, page[1]);
     }
-    // navigation.navigate('PokemonDetail', {name: name});
   };
 
   useEffect(() => {
@@ -119,12 +117,6 @@ const Pokemons = () => {
           )}
         />
       )}
-{/* 
-      <Button
-        title="Carregar Mais"
-        onPress={loadMore}
-        style={styles.buttonMore}
-      /> */}
 
       {(!itens || itens.length <= 0) && (
         <Text style={styles.noone}>Nenhum resultado a exibir</Text>
